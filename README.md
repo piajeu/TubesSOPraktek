@@ -128,40 +128,64 @@ Kedua aplikasi ini memberikan wawasan tentang pendekatan komunikasi real-time, b
 ### Fitur Utama Code
 
 1. **Server**
-    http.createServer()
-    •	Membuat server HTTP untuk melayani permintaan klien, seperti menyajikan file HTML.
-    fs.readFile()
-    •	Membaca file dari sistem lokal untuk dikirimkan sebagai respons HTTP.
-    WebSocket.Server()
-    •	Membuat server WebSocket untuk menangani komunikasi real-time antara klien dan server.
-    wss.on('connection')
-    •	Mendeteksi koneksi baru dari klien WebSocket dan menambahkannya ke daftar koneksi aktif.
-    ws.on('message')
-    •	Mendeteksi pesan yang dikirim oleh klien dan memprosesnya, termasuk mengubah username atau mendistribusikan pesan ke semua klien.
-    clients.forEach()
-    •	Mengiterasi semua klien aktif untuk mengirimkan pesan ke mereka.
-    wss.on('close')
-    •	Mendeteksi penutupan koneksi dari klien dan menghapus klien tersebut dari daftar koneksi aktif.
-    server.listen()
-    •	Menjalankan server HTTP dan WebSocket pada port tertentu sehingga siap menerima permintaan dari klien.
+    1. **`http.createServer()`**
+    
+        Membuat server HTTP untuk melayani permintaan klien, seperti menyajikan file HTML.
+    
+    2. **`fs.readFile()`**
+        
+        Membaca file dari sistem lokal untuk dikirimkan sebagai respons HTTP.
+        
+    3. **`WebSocket.Server()`**
+        
+        Membuat server WebSocket untuk menangani komunikasi real-time antara klien dan server.
+        
+    4. **`wss.on('connection')`**
+        
+        Mendeteksi koneksi baru dari klien WebSocket dan menambahkannya ke daftar koneksi aktif.
+        
+    5. **`ws.on('message')`**
+        
+        Mendeteksi pesan yang dikirim oleh klien dan memprosesnya, seperti mengubah username atau mendistribusikan pesan ke semua klien.
+        
+    6. **`clients.forEach()`**
+        
+        Mengiterasi semua klien aktif untuk mengirimkan pesan kepada mereka.
+        
+    7. **`wss.on('close')`**
+        
+        Mendeteksi penutupan koneksi dari klien dan menghapus klien tersebut dari daftar koneksi aktif.
+        
+    8. **`server.listen()`**
+        
+        Menjalankan server HTTP dan WebSocket pada port tertentu sehingga siap menerima permintaan dari klien.
 
 2. **Klien**
-    const ws = new WebSocket('ws://localhost:3000');
-    •	Membuka koneksi WebSocket ke server yang berjalan di localhost pada port 3000.
-    ws.onopen
-    •	Event yang terjadi ketika koneksi WebSocket berhasil dibuka. Hanya mencetak pesan log ke konsol sebagai notifikasi bahwa koneksi berhasil.
-    ws.onmessage
-    •	Event untuk menangani pesan yang diterima dari server:
-        o	Pesan dalam format JSON diparse ke objek JavaScript.
-        o	Elemen <p> dibuat untuk menampilkan pesan, memformatnya dengan username dan teks pesan.
-        o	Pesan ditambahkan ke elemen #chat, dan scrollbar otomatis turun ke pesan terbaru.
-    sendButton.addEventListener('click')
-    •	Event klik pada tombol "Send" memicu:
-        o	Mengambil username dari input #username (default: "Anonymous").
-        o	Memastikan pesan tidak kosong sebelum dikirim.
-        o	Jika username belum dikirim sebelumnya, mengirimnya ke server sebagai objek JSON { username }.
-        o	Mengirim teks pesan sebagai objek JSON { message }.
-        o	Membersihkan input teks setelah pesan terkirim.
+    1. **`const ws = new WebSocket('ws://localhost:3000');`**
+    
+        Membuka koneksi WebSocket ke server yang berjalan di `localhost` pada port `3000`.
+    
+    2. **`ws.onopen`**
+        
+        Event yang terjadi ketika koneksi WebSocket berhasil dibuka:
+        
+        - Mencetak pesan log ke konsol sebagai notifikasi bahwa koneksi berhasil.
+    3. **`ws.onmessage`**
+        
+        Event untuk menangani pesan yang diterima dari server:
+        
+        - Mem-parse pesan dalam format JSON menjadi objek JavaScript.
+        - Membuat elemen `<p>` untuk menampilkan pesan yang sudah diformat dengan username dan teks pesan.
+        - Menambahkan pesan ke elemen `#chat` dan mengatur scrollbar untuk otomatis turun ke pesan terbaru.
+    4. **`sendButton.addEventListener('click')`**
+        
+        Event klik pada tombol "Send" memicu:
+        
+        - Mengambil username dari input `#username` (default: "Anonymous").
+        - Memastikan bahwa pesan tidak kosong sebelum dikirim.
+        - Jika username belum dikirim sebelumnya, mengirimkannya ke server sebagai objek JSON `{ username }`.
+        - Mengirim teks pesan ke server sebagai objek JSON `{ message }`.
+        - Membersihkan input teks setelah pesan terkirim.
 
 
 ### ▶️ Cara Penggunaan
