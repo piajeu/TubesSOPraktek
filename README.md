@@ -39,26 +39,27 @@ Kedua aplikasi ini memberikan wawasan tentang pendekatan komunikasi real-time, b
 
 1. **Server**
     socket()
-    •	Membuat endpoint komunikasi untuk server.
+       Membuat endpoint komunikasi untuk server.
     bind()
-    •	Mengikat socket ke alamat IP dan port tertentu.
+       Mengikat socket ke alamat IP dan port tertentu.
     listen()
-    •	Mengatur socket dalam mode "listening", siap menerima koneksi masuk.
+       Mengatur socket dalam mode "listening", siap menerima koneksi masuk.
     accept()
-    •	Menerima koneksi klien dan menghasilkan socket baru untuk komunikasi.
+       Menerima koneksi klien dan menghasilkan socket baru untuk komunikasi.
     fork()
-    •	Membagi proses menjadi dua: 
-        o	Proses induk: Kembali ke loop untuk menerima klien berikutnya.
-        o	Proses anak: Menangani komunikasi dengan klien spesifik.
+       Membagi proses menjadi dua:
+       o Proses induk: Kembali ke loop untuk menerima klien berikutnya.
+       o Proses anak: Menangani komunikasi dengan klien spesifik.
     recv()
-    •	Menerima data dari klien.
+       Menerima data dari klien.
     send()
-    •	Mengirim data ke klien.
+       Mengirim data ke klien.
     inet_ntop()
-    •	Mengubah alamat IP dari bentuk biner ke string yang bisa dibaca manusia.
+       Mengubah alamat IP dari bentuk biner ke string yang bisa dibaca manusia.
     close()
-    •	Menutup socket untuk mengakhiri komunikasi.
-2. **Klien**
+       Menutup socket untuk mengakhiri komunikasi.
+   
+3. **Klien**
     socket()
     •	Membuat endpoint komunikasi untuk client.
     connect()
