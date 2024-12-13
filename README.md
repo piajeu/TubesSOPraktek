@@ -1,6 +1,6 @@
 # TubesSOPraktek 🎓
 
-## Aplikasi Chat Berbasis WebSocket 💬
+## Aplikasi Chat Berbasis C dan Websocket 💬
 
 Repositori ini berisi dua program yang menunjukkan implementasi aplikasi chat secara real-time menggunakan teknologi berbeda:
 
