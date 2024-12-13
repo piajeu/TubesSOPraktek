@@ -38,40 +38,68 @@ Kedua aplikasi ini memberikan wawasan tentang pendekatan komunikasi real-time, b
 ### Fitur Utama Code
 
 1. **Server**
-    socket()
-       Membuat endpoint komunikasi untuk server.
-    bind()
-       Mengikat socket ke alamat IP dan port tertentu.
-    listen()
-       Mengatur socket dalam mode "listening", siap menerima koneksi masuk.
-    accept()
-       Menerima koneksi klien dan menghasilkan socket baru untuk komunikasi.
-    fork()
-       Membagi proses menjadi dua:
-       o Proses induk: Kembali ke loop untuk menerima klien berikutnya.
-       o Proses anak: Menangani komunikasi dengan klien spesifik.
-    recv()
-       Menerima data dari klien.
-    send()
-       Mengirim data ke klien.
-    inet_ntop()
-       Mengubah alamat IP dari bentuk biner ke string yang bisa dibaca manusia.
-    close()
-       Menutup socket untuk mengakhiri komunikasi.
+    1. **`socket()`**
+    
+        Membuat endpoint komunikasi untuk server.
+    
+    2. **`bind()`**
+        
+        Mengikat socket ke alamat IP dan port tertentu.
+        
+    3. **`listen()`**
+        
+        Mengatur socket dalam mode "listening", sehingga siap menerima koneksi masuk.
+        
+    4. **`accept()`**
+        
+        Menerima koneksi klien dan menghasilkan socket baru untuk komunikasi.
+        
+    5. **`fork()`**
+        
+        Membagi proses menjadi dua:
+        
+        - **Proses induk**: Kembali ke loop untuk menerima klien berikutnya.
+        - **Proses anak**: Menangani komunikasi dengan klien spesifik.
+    6. **`recv()`**
+        
+        Menerima data dari klien.
+        
+    7. **`send()`**
+        
+        Mengirim data ke klien.
+        
+    8. **`inet_ntop()`**
+        
+        Mengubah alamat IP dari bentuk biner ke string yang dapat dibaca manusia.
+        
+    9. **`close()`**
+        
+        Menutup socket untuk mengakhiri komunikasi.
    
-3. **Klien**
-    socket()
-    •	Membuat endpoint komunikasi untuk client.
-    connect()
-    •	Menghubungkan client ke server pada alamat dan port tertentu.
-    recv()
-    •	Menerima data dari server.
-    send()
-    •	Mengirim data ke server.
-    inet_pton()
-    •	Mengonversi alamat IP dari format string ke biner.
-    close()
-    •	Menutup socket untuk mengakhiri koneksi.
+2. **Klien**
+    1. **`socket()`**
+    
+        Membuat endpoint komunikasi untuk client.
+    
+    2. **`connect()`**
+        
+        Menghubungkan client ke server pada alamat dan port tertentu.
+        
+    3. **`recv()`**
+        
+        Menerima data dari server.
+        
+    4. **`send()`**
+        
+        Mengirim data ke server.
+        
+    5. **`inet_pton()`**
+        
+        Mengonversi alamat IP dari format string ke bentuk biner.
+        
+    6. **`close()`**
+        
+        Menutup socket untuk mengakhiri koneksi.
 
 
 ### ▶️ Cara Penggunaan
